@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
+        "3-Semestre/Alura-Java-Terceiro-Semestre/sintaxe-variaveis-e-fluxo/src",
         "3-Semestre/Alura-Java-Terceiro-Semestre/sintaxe-basica/src",
-        "3-Semestre/Alura-Java-Terceiro-Semestre/sintaxe-variaveis-e-fluxo/src"
+        "3-Semestre/Alura-Java-Terceiro-Semestre/bytebank/src"
     ]
 }
