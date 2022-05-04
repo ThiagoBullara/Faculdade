@@ -23,3 +23,5 @@ public class TesteReferencias {
 
    } 
 }
+
+// Nesse caso a primeira e segunda conta são o mesmo objeto

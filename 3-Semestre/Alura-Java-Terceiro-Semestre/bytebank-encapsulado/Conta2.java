@@ -1,8 +1,8 @@
-public class Conta {
-    double saldo;
-    int agencia;
-    int numero;
-    String titular; 
+public class Conta2 {
+    private double saldo;
+    private int agencia;
+    private int numero;
+    private Cliente2 titular;
 
     public void deposita(double valor) {
         this.saldo += valor;
@@ -20,7 +20,7 @@ public class Conta {
         }
     }
 
-    public boolean transfere(double valor, Conta destino) {
+    public boolean transfere(double valor, Conta2 destino) {
         if(valor <= this.saldo && valor > 0){
             saca(valor);
             destino.deposita(valor);
@@ -31,8 +31,37 @@ public class Conta {
         
     }
 
+    // Encapsulamento de atributo, dessa forma ele só pode ser acessado por um método já que está private 
+    public double getSaldo() {
+        return this.saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public int getNumero() {
+        return this.numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public int getAgencia() {
+        return this.agencia;
+    }
+
+    public void setAgencia(int agencia) {
+        this.agencia = agencia;
+    }
+
+    public Cliente2 getTitular(){
+        return this.titular;
+    }
+
+    public void setTitular(Cliente2 titular) {
+        this.titular = titular;
+    }
 
 }
-
-// Void serve para informar que o método não vai retornar nada
-// Boolean deve retornar true ou falso

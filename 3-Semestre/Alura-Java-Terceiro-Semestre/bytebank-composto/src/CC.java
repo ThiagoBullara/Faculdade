@@ -1,8 +1,9 @@
-public class Conta {
-    double saldo;
+public class CC {
+    private double saldo;
     int agencia;
     int numero;
-    String titular; 
+    Cliente titular;
+    // Cliente titular = new Cliente(); pode fazer dessa maneira em alguns casos 
 
     public void deposita(double valor) {
         this.saldo += valor;
@@ -20,7 +21,7 @@ public class Conta {
         }
     }
 
-    public boolean transfere(double valor, Conta destino) {
+    public boolean transfere(double valor, CC destino) {
         if(valor <= this.saldo && valor > 0){
             saca(valor);
             destino.deposita(valor);
@@ -31,8 +32,9 @@ public class Conta {
         
     }
 
+    // Encapsulamento de atributo, dessa forma ele só pode ser acessado por um método já que está private 
+    public double getSaldo() {
+        return this.saldo;
+    }
 
 }
-
-// Void serve para informar que o método não vai retornar nada
-// Boolean deve retornar true ou falso
