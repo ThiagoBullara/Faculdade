@@ -3,6 +3,18 @@ public class Conta2 {
     private int agencia;
     private int numero;
     private Cliente2 titular;
+    private static int total;
+
+    // static indica que o atibuto é da classe Conta2, ele é tipo uma variavel global
+
+    // Construtor recebe as regras que seu objeto deve seguir para ser criado
+    public Conta2(int agencia, int numero) {
+        Conta2.total++;
+        System.out.println("O total de contas é: " + Conta2.total);
+        this.agencia = agencia;
+        this.numero = numero;
+        System.out.println("Contsrutor");
+    }
 
     public void deposita(double valor) {
         this.saldo += valor;
@@ -62,6 +74,10 @@ public class Conta2 {
 
     public void setTitular(Cliente2 titular) {
         this.titular = titular;
+    }
+
+    public static int getTotal() {
+        return Conta2.total;
     }
 
 }

@@ -1,7 +1,10 @@
 public class TestaGetESet {
     public static void main(String[] args) {
-        Conta2 conta = new Conta2();
-        conta.setNumero(1337);
+        Conta2 conta = new Conta2(1337, 1226);
+        Conta2 conta2 = new Conta2(1437, 1226);
+        System.out.println(Conta2.getTotal());
+        // conta.setNumero(1337);
+        System.out.println(conta.getAgencia());
         System.out.println(conta.getNumero());
         conta.setTitular(new Cliente2());
         conta.getTitular().setNome("Thiago");
