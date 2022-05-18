@@ -9,7 +9,6 @@ public class TestaGetESet {
         conta.setTitular(new Cliente2());
         conta.getTitular().setNome("Thiago");
         System.out.println(conta.getTitular().getNome()); // Encapsulamento da classe cliente dentro da classe conta que também tá encapsulada
-
         System.out.println(conta.getTitular());
         
     }
