@@ -1,13 +1,13 @@
 {
     "java.project.sourcePaths": [
-        "3-Semestre/Alura-Java-Terceiro-Semestre/sintaxe-variaveis-e-fluxo/src",
-        "3-Semestre/Alura-Java-Terceiro-Semestre/sintaxe-basica/src",
-        "3-Semestre/Alura-Java-Terceiro-Semestre/bytebank/src",
-        "3-Semestre/Alura-Java-Terceiro-Semestre/bytebank-composto/src",
-        "3-Semestre/Alura-Java-Terceiro-Semestre/bytebank-encapsulado/src",
+        "3-Semestre/Alura-Java-OOP/sintaxe-variaveis-e-fluxo/src",
+        "3-Semestre/Alura-Java-OOP/sintaxe-basica/src",
+        "3-Semestre/Alura-Java-OOP/bytebank/src",
+        "3-Semestre/Alura-Java-OOP/bytebank-composto/src",
+        "3-Semestre/Alura-Java-OOP/bytebank-encapsulado/src",
         "3-Semestre/Programacao-De-Solucoes-Computacionais/aula2/src",
         "3-Semestre/Programacao-De-Solucoes-Computacionais/aula3/src",
         "3-Semestre/Programacao-De-Solucoes-Computacionais/aula4/src",
-        "3-Semestre/Programacao-De-Solucoes-Computacionais/aula5/src"
+        "3-Semestre/Programacao-De-Solucoes-Computacionais/aula5/src",
     ]
 }

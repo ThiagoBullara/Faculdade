@@ -1,9 +1,9 @@
 {
     "java.project.sourcePaths": [
-        "Alura-Java-Terceiro-Semestre/sintaxe-variaveis-e-fluxo/src",
-        "Alura-Java-Terceiro-Semestre/bytebank/src",
-        "Alura-Java-Terceiro-Semestre/bytebank-encapsulado/src",
-        "Alura-Java-Terceiro-Semestre/bytebank-composto/src",
+        "Alura-Java-OOP/sintaxe-variaveis-e-fluxo/src",
+        "Alura-Java-OOP/bytebank/src",
+        "Alura-Java-OOP/bytebank-encapsulado/src",
+        "Alura-Java-OOP/bytebank-composto/src",
         "ProvaA1/src"
     ]
 }
