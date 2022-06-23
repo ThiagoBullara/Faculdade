@@ -1,0 +1,75 @@
+Script para BD.
+
+Usar SNAKE_CASE e LETRAS_MAIÚSCULAS.
+O WHERE funciona como uma condição tornando possível filtrar usando maior, menor e diferente.
+É possível usar o AND, OR e BETWEEN para filtragens.
+
+---------------------------------------------------------------------------------------------------------------------------------
+GERAL.
+
+// Criar bd - CREATE DATABASE "nome do banco" DEFAULT CHARACTER SET utf8;
+// Deletar bd - DROP DATABASE "nome do banco";
+// Selecionar bd - USE "nome do banco";
+
+---------------------------------------------------------------------------------------------------------------------------------
+DADOS.
+
+//Tipos de dados: http://www.bosontreinamentos.com.br/mysql/mysql-tipos-de-dados-comuns-09/
+
+VARCHAR() -> Strings de tamanhos variados.
+INT() -> Inteiros de tamanhos variados.
+FLOAT() -> Floats de tamanhos variados.	
+BIT() -> 0 ou 1.	
+
+---------------------------------------------------------------------------------------------------------------------------------
+TABELAS E COLUNAS.
+
+// Criar tabela e colunas - CREATE TABLE "nome do banco"."nome da tabela"
+("nome da coluna" "tipo da coluna"("tamanho max dos dados"),
+"nome da coluna" "tipo da coluna"("tamanho max dos dados"),
+"nome da coluna" "tipo da coluna"("tamanho max dos dados"),
+"nome da coluna" "tipo da coluna"("tamanho max dos dados"));
+
+// Editar tabela - ALTER TABLE "nome da tabela" ADD COLUMN (nome da coluna);
+
+// Deletar tabela - DROP TABLE "nome da tabela";
+
+// Mostrar toda uma tabela - SELECT * FROM "nome da tabela";
+
+// Mostrar uma coluna esecifica - SELECT "nome da coluna" FROM "nome da tabela";
+
+// Mostrar uma coluna especifica e limitar as linhas - SELECT "nome da coluna" FROM "nome da tabela" LIMIT 
+"quantidade de linhas";
+
+// Mostrar uma coluna especifica e alterar o nome dela para visualização - SELECT "nome da coluna" AS 
+"novo nome" FROM "nome da tabela";
+
+// Mostrar uma linha especifica - SELECT * FROM "nome da tabela" WHERE 
+"nome da coluna chave primária" = "chave primária referente a linha"; OU
+"nome da coluna" = "valor";
+
+---------------------------------------------------------------------------------------------------------------------------------
+MANIPULAR DADOS.
+
+// Inserir dados na coluna - INSERT INTO "nome da tabela"
+("nome da coluna1", "nome da coluna2", "nome da coluna3") VALUES 
+("valor para coluna1", "valor para coluna2", "valor para coluna3");
+
+// Editar dados na coluna - UPDATE "nome da tabela" SET 
+"nome da coluna1" = "novo valor", "nome da coluna2" = "novo valor" WHERE
+"nome da coluna chave primária" = "chave primária referente a linha"; OU
+"nome da coluna" = "valor";
+
+// Excluir dados na coluna - DELETE FROM "nome da tabela" WHERE
+"nome da coluna chave primária" = "chave primária referente a linha"; OU
+"nome da coluna" = "valor";
+
+---------------------------------------------------------------------------------------------------------------------------------
+CHAVES PRIMÁRIAS.
+
+// Definir chave primária - ALTER TABLE "nome da tabela" ADD PRIMARY KEY 
+("nome da coluna que vai se tornar chave primária");
+
+
+
+

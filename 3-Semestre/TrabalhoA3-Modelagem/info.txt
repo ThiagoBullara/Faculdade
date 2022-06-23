@@ -1,0 +1,10 @@
+Coisas para adicionar nos requisitos:
+
+Quantidade de um produto não pode ser superior a 2000 em estoque.
+Tirar a parte do usuário poder vender um produto.
+Deve possuir três tipos de conta (adm, cliente).
+O preço de um produto não pode ser superior a 5 digitos inteiros e 2 decimais.
+O máximo de produtos em um único pedido não pode ser superior a 100.
+Pagamento apensa por boleto e Pix.
+Tabela de todos os pedidos.
+

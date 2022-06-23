@@ -1,0 +1,193 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// CRIAÇÃO DO BANCO DE DADOS E SUAS TABELAS.
+
+CREATE DATABASE livraria;
+
+USE livraria;
+
+CREATE TABLE contas(
+	id_conta INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	nome VARCHAR(100) NOT NULL,
+	sexo VARCHAR(100) NOT NULL,
+	idade INT(3) NOT NULL,
+	email VARCHAR(100) NOT NULL,
+	senha VARCHAR(100) NOT NULL,
+	cep INT(8) NOT NULL,
+	endereco VARCHAR(100) NOT NULL,
+	numero_residencia INT(10) NOT NULL,
+	complemento VARCHAR(100),
+	telefone INT(12) NOT NULL,
+	tipo_conta ENUM('adm', cliente') NOT NULL,
+	codigo_adm INT(20)
+) ENGINE=INNODB;
+
+CREATE TABLE produtos(
+	id_produto INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	nome_produto VARCHAR(100) NOT NULL,
+	quantidade_produto INT(2000) NOT NULL,
+	preco_produto FLOAT(5,2) NOT NULL
+) ENGINE=INNODB;
+
+CREATE TABLE carrinho(
+	id_carrinho INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	lista_produtos VARCHAR(10000) NOT NULL,	
+	quantidade_produtos INT(100) NOT NULL,
+	preco_total_produtos INT(10) NOT NULL,
+	FOREIGN KEY (id_conta) REFERENCES contas(id_conta)
+) ENGINE=INNODB;
+
+CREATE TABLE pedidos(
+	id_pedido INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	lista_produtos VARCHAR(10000) NOT NULL,	
+	quantidade_produtos INT(100) NOT NULL,
+	preco_total_produtos INT(10) NOT NULL,
+	data_pedido DATETIME NOT NULL,
+	data_envio DATETIME NOT NULL,
+	codigo_envio INT(100) NOT NULL,
+	FOREIGN KEY (id_conta) REFERENCES contas(id_conta)
+) ENGINE=INNODB;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// EXEMPLO DE CRIAÇÃO DE CONTA DO TIPO ADM.
+
+INSERT INTO contas (
+	nome,
+	sexo,
+	idade,
+	email,
+	senha,
+	cep,
+	endereco,
+	numero_residencia,
+	complemento,
+	telefone,
+	tipo_conta,
+	codigo_adm
+) VALUES (
+	'Thiago Bullara',
+	'Masculino',
+	'21',
+	'thiago@gmail.com',
+	MD5('senha123456'),
+	'04598345',
+	'Avenida Santo Amaro',
+	'289',
+	'Apartamento 8 Bloco 2',
+	'11987656654',
+	'adm',
+	'34567900004563232111'
+);
+
+// EXEMPLO DE CRIAÇÃO DE CONTA DO TIPO CLIENTE.
+
+INSERT INTO contas (
+	nome,
+	sexo,
+	idade,
+	email,
+	senha,
+	cep,
+	endereco,
+	numero_residencia,
+	complemento,
+	telefone,
+	tipo_conta,
+	codigo_adm
+) VALUES (
+	'João Antonio',
+	'Masculino',
+	'42',
+	'joao@hotmail.com',
+	MD5('joaoa1234'),
+	'04599763',
+	'Alameda das Laranjeiras',
+	'35',
+	'Apartamento 1',
+	'11982375643',
+	'cliente',
+	''
+);
+
+// EXEMPLO DE CRIAÇÃO DE UM PRODUTO.
+
+INSERT INTO produtos (
+	nome_produto,
+	quantidade_produto,
+	preco_produto	
+) VALUES (
+	'Livro de Receitas 2',
+	'500',
+	'39.9'
+);
+
+// EXEMPLO DE CRIAÇÃO DE UM CARRINHO.
+
+INSERT INTO carrinho (
+	lista_produtos,	
+	quantidade_produtos,
+	preco_total_produtos,
+	id_conta
+) VALUES (
+	'Livro de Receitas 2, Livro de Matemática e Manual de Sobrevivência',
+	'3',
+	'132.50',
+	(SELECT id_conta FROM contas WHERE email = 'email do comprador')
+);
+
+// EXEMPLO DE CRIAÇÃO DE UM PEDIDO.
+
+INSERT INTO pedidos (
+	lista_produtos,
+	quantidade_produtos,
+	preco_total_produtos,
+	data_pedido,
+	data_envio,
+	codigo_envio,
+	id_conta
+) VALUES (
+	'Livro de Receitas 2, Livro de Matemática e Manual de Sobrevivência',
+	'3',
+	'132.50',
+	'2022-08-03 21:34:20',
+	'2022-08-04 08:05:47',
+	'213214124124',
+	(SELECT id_conta FROM contas WHERE email = 'email do comprador')
+);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// SCRIPT PARA EDITAR VALORES.
+
+UPDATE "nome da tabela" SET "nome da coluna" = "novo valor" WHERE "id" = "id referente a linha que deseja editar"; 
+
+// SCRIPT PARA EXIBIR VALORES ESPECÍFICOS.
+
+SELECT * FROM "nome da tabela" WHERE "id" = "id referente a linha que deseja editar"; 
+
+// SCRIPT PARA EXIBIR TABELAS.
+
+SELECT * FROM "nome da tabela";
+
+// SCRIPT PARA EXIBIR COLUNAS.
+
+SELECT "nome da coluna" FROM "nome da tabela";
+
+// SCRIPT PARA EXIBIR COLUNAS COM LIMITAÇÃO NAS LINHAS.
+
+SELECT "nome da coluna" FROM "nome da tabela" LIMIT "quantidade de linhas que deseja exibir";
+
+// SCRIPT PARA EXCLUIR VALORES.
+
+DELETE FROM "nome da tabela" WHERE "id" = "id referente a linha que deseja editar"; 
+
+// SCRIPT PARA EXCLUIR TABELAS.
+
+DROP TABLE "nome da tabela";
+
+// SCRIPT PARA DELETAR BANCO DE DADOS.
+
+DROP DATABASE "nome do banco";
+
+// OBS: USAR "AND", "OR" E "BETWEEN" PARA OUTRAS FILTRAGENS.
